@@ -100,4 +100,36 @@ void linklist::del(int num)
 	}
 	cout << endl << "Element " << num << " not found.";
 }
+void linklist::display()
+{
+                node *q;
+                cout << endl;
+                for (q = p; q != NULL; q = q->link)
+                                cout << endl << q->data;
+}
+ 
+void linklist::operator=(linklist t)
+{
+                p = t.p;
+}
+ 
+int linklist::operator==(linklist t)
+{
+                int flag = FALSE;
+                node *a = p, *b = t.p;
+                if (a == NULL && b == NULL)
+                {
+                                flag = TRUE;
+                                return flag;
+                }
+                while (a != NULL && b != NULL)
+                {
+                                if (a->data != b->data)
+                                                return flag;
+                                a = a->link;
+                                b = b->link;
+                }
+                flag = TRUE;
+                return flag;
+}
 
