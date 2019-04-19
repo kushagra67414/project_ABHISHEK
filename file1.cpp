@@ -75,3 +75,29 @@ void linklist::addafter(int c, int num)
 	t->link = q->link;
 	q->link = t;
 }
+void linklist::del(int num)
+{
+	node *q, *r;
+	q = p;
+	if(q->data == num)
+	{
+		p = q->link;
+		delete q;
+		return;
+	}
+
+	r = q;
+	while (q != NULL)
+	{
+		if (q->data == num)
+		{
+			r->link = q->link;
+			delete q;
+			return;
+		}
+		r = q;
+		q = q->link;
+	}
+	cout << endl << "Element " << num << " not found.";
+}
+
