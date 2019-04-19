@@ -18,3 +18,14 @@ public:
 	void addafter(int c, int num);
 	void del(int num);
 	void display();
+		int operator==(linklist);
+
+	//To copt ylist from one to another.
+	void operator=(linklist);
+};
+
+linklist::linklist()
+{
+	p = NULL;
+}
+
