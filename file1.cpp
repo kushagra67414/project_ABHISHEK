@@ -193,3 +193,5 @@ void String::toupper()
 		if (islower(str[i]))
 			str[i] -= 32;
 }
+hello 
+hello
