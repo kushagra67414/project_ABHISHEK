@@ -100,4 +100,23 @@ void linklist::del(int num)
 	}
 	cout << endl << "Element " << num << " not found.";
 }
+int main()
+{
+	linklist a, b;
+	a.addatbeg(5);
+	a.addatbeg(4);
+	a.addatbeg(3);
+	
+	b = a; //Copying two linked lists.
+	cout <<"linked list : b";
+	b.display();
+	
+	if(a == b)//Comparing two linked lists.
+		cout << "a and b are quivalent.\n";
+	else
+		cout <<"a and b are not equivalent.\n";
+	
+	_getch();
+	return 0;
+}
 
