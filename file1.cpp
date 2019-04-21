@@ -193,5 +193,55 @@ void String::toupper()
 		if (islower(str[i]))
 			str[i] -= 32;
 }
-hello 
-hello
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+class B1
+{
+public:
+	B1()
+	{
+		cout << "Constructor of B1" << endl;
+	}
+	~B1()
+	{
+		cout << "Destructor of B1" << endl;
+	}
+};
+
+class B2
+{
+public:
+	B2()
+	{
+		cout << "Constructor of B2" << endl;
+	}
+	~B2()
+	{
+		cout << "Destructor of B2" << endl;
+	}
+};
+
+class D : public B1, public B2
+{
+public:
+	D() : B1(), B2()
+	{
+		cout << "Construtor of D" << endl;
+	}
+	~D()
+	{
+		cout << "Destructor of D" << endl;
+	}
+};
+
+int main()
+{
+	D a;
+	_getch();
+	return 0;
+}
+
+/*Destructor of that class will run first whose constructor is executed
+last. It follows LIFO concept.*/
